@@ -21,14 +21,14 @@ BEGIN
     Write("Saisie des éléments du tableau 01");
 
     FOR i FROM 0 TO T01 STEP 1  DO
-        Write("Saisir l'élément en position : ",i)
+        Write("Saisir l'élément en position : ",i);
         Read(tab01[i]);
     END_FOR
 
      Write("Sasie des éléments du tableau 02");
 
     FOR i FROM 0 TO T02 STEP 1  DO
-        Write("Saisir l'élément en position : ",i)
+        Write("Saisir l'élément en position : ",i);
         Read(tab02[i]);
     END_FOR
     //Fin saisie-----------------------------------------------------
@@ -46,12 +46,12 @@ BEGIN
     //Calcul du total------------------------------------------------   
     k:=k-1;
     IF (k<0) THEN
-        Write("Aucun des chiffres entrés dans les deux tableaux n'a de correspondance")  
+        Write("Aucun des chiffres entrés dans les deux tableaux n'a de correspondance");
     ELSE
         FOR i FROM 0 TO k STEP 1  DO
             sum:=sum+tab03[i];
         END_FOR
-            Write("Le total des chiffres égaux des tableaux est : ", sum)
+            Write("Le total des chiffres égaux des tableaux est : ", sum);
     END_IF
     //Fin calcull-----------------------------------------------------
 
