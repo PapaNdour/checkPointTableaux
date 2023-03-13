@@ -8,10 +8,10 @@ VAR
     k:=0;
     sum:=0;
 BEGIN
-    Write("Donner la longueur du tableau 01")
-    Read(T01)
-    Write("Donner la longueur du tableau 02")
-    Read(T02)
+    Write("Donner la longueur du tableau 01");
+    Read(T01);
+    Write("Donner la longueur du tableau 02");
+    Read(T02);
     
     tab01[]:=T01;
     tab02[]:=T02;
