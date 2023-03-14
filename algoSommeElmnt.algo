@@ -36,8 +36,8 @@ BEGIN
     FOR i FROM 0 TO T01 STEP 1  DO
         FOR j FROM 0 TO T02 STEP 1  DO
             if tab01[i] == tab02[j] then
-                tab03[k]:=tab01[1];
-                k:=K+1;
+                tab03[k]:=tab01[i];
+               k:=K+1; 
             end if 
         END_FOR
     END_FOR

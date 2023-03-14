@@ -1,0 +1,168 @@
+ALGORITHM totalMemeNbr
+VAR
+    tab01 : ARRAY_OF INTEGER[];
+    tab02 : ARRAY_OF INTEGER[];
+    tab03 : ARRAY_OF INTEGER[];
+    T01, T02, T03 : INTEGER;
+    i, j, k, sum :INTEGER;
+         k:=0;
+    cptT02:=1 //Compteur boucle pour tab02
+       sum:=0;
+         j:=0;
+BEGIN
+    Write("Donner la longueur du tableau 01");
+    Read(T01);
+    Write("Donner la longueur du tableau 02");
+    Read(T02);
+    
+    tab01[]:=T01;
+    tab02[]:=T02;
+    Tab03[]:=T01+T03;
+
+    //Saisie des éléments de tableaux--------------------------------
+    Write("Saisie des éléments du tableau 01");
+
+    FOR i FROM 0 TO T01 STEP 1  DO
+        Write("Saisir l'élément en position : ",i);
+        Read(tab01[i]);
+    END_FOR
+
+     Write("Sasie des éléments du tableau 02");
+
+    FOR i FROM 0 TO T02 STEP 1  DO
+        Write("Saisir l'élément en position : ",i);
+        Read(tab02[i]);
+    END_FOR
+    //Fin saisie-----------------------------------------------------
+    //Parcours des tableaux et sommes de éléments identiques---------
+
+    if T01=T02 then
+
+        FOR i FROM 0 TO T01 STEP step  DO
+            
+            WHILE (CptT02<=T02) DO
+                
+                IF (tab01[i] == tab02[j]) THEN
+                        j:=0;
+                    cptT02:=1;
+                    BREAK
+                ELSE
+                    
+                    IF (cptT02==T02) THEN
+                        tab03[k]:=tab01[i];
+                            k:=k+1;
+                    ELSE
+                        cptT02:=cptT02+1;
+                        tab02[j]:=tab02[j+1];
+                    END_IF
+
+                END_IF
+
+            END_WHILE
+
+        END_FOR
+
+    ELSE
+        //Quand le tableau tab02 est plus long que tab01
+        IF (T01<T02) THEN
+
+            FOR i FROM 0 TO T01 STEP 1  DO
+                
+                WHILE (CptT02<=T02) DO
+                    
+                    IF (tab01[i] == tab02[j]) THEN
+                            j:=0;
+                        cptT02:=0;
+                        BREAK
+                    ELSE
+                        
+                        IF (cptT02==T02) THEN
+                            tab03[k]:=tab01[i];
+                                k:=k+1;
+                        ELSE
+                            cptT02:=cptT02+1;
+                            tab02[j]:=tab02[j+1];
+                        END_IF
+
+                    END_IF
+
+                END_WHILE
+
+            END_FOR
+
+            FOR j FROM T01 TO T02 STEP 1 DO
+                tab03[k]:=tab02[j];
+                k:=k+1;
+            END_FOR
+
+        ELSE
+            //Quand le tableau tab01 est plus long que tab02
+
+            FOR j FROM 0 TO T02 STEP 1  DO
+                
+                WHILE (CptT01<=T01) DO
+                    
+                    IF (tab01[i] == tab02[j]) THEN
+                            i:=0;
+                        cptT01:=0;
+                        BREAK
+                    ELSE
+                        
+                        IF (cptT01==T01) THEN
+                            tab03[k]:=tab01[j];
+                                k:=k+1;
+                        ELSE
+                            cptT01:=cptT01+1;
+                            tab01[i]:=tab01[i+1];
+                        END_IF
+
+                    END_IF
+
+                END_WHILE
+
+            END_FOR
+
+            CptT01:=T02
+            FOR i FROM T02 TO T01 STEP 1 DO
+                WHILE (CptT01<=T01) DO
+                    
+                    IF (tab01[i] == tab02[j]) THEN
+                            i:=0;
+                        cptT01:=0;
+                        BREAK
+                    ELSE
+                        
+                        IF (cptT01==T01) THEN
+                            tab03[k]:=tab01[j];
+                                k:=k+1;
+                        ELSE
+                            cptT01:=cptT01+1;
+                            tab01[i]:=tab01[i+1];
+                        END_IF
+
+                    END_IF
+
+                END_WHILE
+            END_FOR
+
+        END_IF
+
+
+    END_IF
+
+    //Fin parcours---------------------------------------------------
+
+    //Calcul du total------------------------------------------------   
+    k:=k-1;
+    IF (k<0) THEN
+        Write("Aucune difference n'est à noter entre les deux tableaux!");
+    ELSE
+        FOR i FROM 0 TO k STEP 1  DO
+            sum:=sum+tab03[i];
+        END_FOR
+            Write("Le total des chiffres égaux des tableaux est : ", sum);
+    END_IF
+    //Fin calcull-----------------------------------------------------
+
+
+END
