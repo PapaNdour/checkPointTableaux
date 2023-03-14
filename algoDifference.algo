@@ -53,7 +53,7 @@ BEGIN
 
         FOR i FROM 0 TO T01 STEP step  DO
             
-            WHILE (CptT02<=T02 AND Q=="Y") DO
+            WHILE (CptT02<=T02 OR Q=="Y") DO
                 
                 IF (tab01[i] == tab02[j]) THEN
                         j:=0;
